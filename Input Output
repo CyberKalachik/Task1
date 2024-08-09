@@ -1,0 +1,18 @@
+with open('Quiz.txt') as text:
+    s = text.read()
+    s1 = s.lower().split()
+    l = int(len(s1))
+    i = 0
+    key = 0
+    value = 0
+    s2 = {}
+    while i < l:
+        key = s1[i]
+        if key in s1:
+            value = s1.count(key)
+            i += 1
+            if key not in s2:
+                s2[key] = value
+            large_key = max(s2, key = lambda k: s2[k])
+            large_value = s2[large_key]
+print(large_key + ' ' + str(large_value))
